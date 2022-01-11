@@ -129,6 +129,14 @@ _.last = function(array, number) {
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
+_.indexOf = function(array, value) {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] === value) {
+            return i;
+        }
+    } return -1;
+};
+
 
 /** _.contains
 * Arguments:
@@ -145,6 +153,13 @@ _.last = function(array, number) {
 *   _.contains([1,"two", 3.14], "two") -> true
 */
 
+_.contains = function(array, value) {
+    if (array.includes(value)) {
+        return true;
+    } else {
+        return false;
+    }
+};
 
 /** _.each
 * Arguments:
@@ -184,6 +199,15 @@ _.each = function (array, func) {
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
+_.unique = function(array) {
+    let newArray = [];
+    for (let i = 0; i < array.length; i++) {
+        if (_.indexOf(array, array[i]) === i) {
+            newArray.push(array[i]);
+        }
+    }
+    return newArray;
+};
 
 /** _.filter
 * Arguments:
@@ -201,6 +225,15 @@ _.each = function (array, func) {
 *   use _.each in your implementation
 */
 
+_.filter = function(array, test) {
+    var result = [];
+    _.each(array, function(val, i, arr) {
+        if (test(val, i, arr)) {
+            result.push(val);
+        }
+    });
+    return result;
+};
 
 /** _.reject
 * Arguments:
@@ -215,6 +248,15 @@ _.each = function (array, func) {
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
 
+_.reject = function(array, test) {
+    var result = [];
+    _.each(array, function(val, i, arr) {
+        if (test(val, i, arr) === false) {
+            result.push(val);
+        }
+    });
+    return result;
+};
 
 /** _.partition
 * Arguments:
@@ -235,6 +277,33 @@ _.each = function (array, func) {
 }
 */
 
+// _.partition = function(array, func) {
+//     array1 = [];
+//     array2 = [];
+//     result = [array1, array2];
+//     _.each(array, func(element, key, array) {
+//         if (func(element, key, arr) === !element) {
+//             array1.push(element);
+//         } else {
+//             array2.push(element);
+//         }
+//     )};
+//     return result;
+// }
+
+_.partition = function(array, test) {
+    let array1 = [];
+    let array2 = [];
+    let finalArray = [array1, array2];
+    _.each(array, function(element, key, arr) {
+        if(test(element, key, arr) === !element) {
+            array2.push(element);
+        } else {
+            array1.push(element);
+        }
+    });
+    return finalArray;
+}
 
 /** _.map
 * Arguments:
@@ -305,17 +374,39 @@ _.pluck = function(array, property) {
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
-// _.every = function(collection, func) {
-//     if (Array.isArray(collection)) {
-//         for (var i = 0; i < collection.length; i++) {
-//             var result = func(collection[i], i, collection);
-//     } else {
-        
-//     }
-    
-        
-//     }
-// }
+_.every = function(collection, func) {
+    let answer = true;
+    if (func) {
+        if (Array.isArray(collection)) {
+            for (var i = 0; i < collection.length; i++) {
+                if (!func(collection[i], i, collection)) {
+                    answer = false;
+                }
+            }
+        } else {
+            for (let key in collection) {
+                if(!func(collection[key], key, collection)) {
+                    answer =false;
+                }
+            }
+        } 
+    } else {
+        if (Array.isArray(collection)) {
+            for (let i = 0; i < collection.length; i++) {
+                if (!collection[i]) {
+                    answer = false;
+                }
+            }
+        } else {
+            for (let key in collection) {
+                if (!collection[key]) {
+                    answer = false;
+                }
+            }
+        }
+    }
+    return answer;
+};
 
 /** _.some
 * Arguments:
@@ -338,6 +429,39 @@ _.pluck = function(array, property) {
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
 
+_.some = function(collection, func) {
+    let answer = false;
+    if (func) {
+        if (Array.isArray(collection)) {
+            for (var i = 0; i < collection.length; i++) {
+                if (func(collection[i], i, collection)) {
+                    answer = true;
+                }
+            }
+        } else {
+            for (let key in collection) {
+                if(func(collection[key], key, collection)) {
+                    answer = true;
+                }
+            }
+        } 
+    } else {
+        if (Array.isArray(collection)) {
+            for (let i = 0; i < collection.length; i++) {
+                if (collection[i]) {
+                    answer = true;
+                }
+            }
+        } else {
+            for (let key in collection) {
+                if (collection[key]) {
+                    answer = true;
+                }
+            }
+        }
+    }
+    return answer;
+};
 
 /** _.reduce
 * Arguments:
