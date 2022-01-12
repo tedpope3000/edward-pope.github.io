@@ -16,8 +16,10 @@
    and it helps to remember that each character and space in a string has an index just like each value in an array does. 
    There are dozens of string methods, and they do everything from searching the string for something specific to 
    converting the nature of the string, to making new strings from selected pieces of existing strings. There are
-   way too many to list and describe here, but if you want a comprehensive listing and explanation of each method, 
-   I've found this site to be useful: https://www.w3schools.com/jsref/jsref_obj_string.asp. 
+   way too many to list and describe here, but the names of these methods will probably give you an idea of how the methods
+   manipulate the strings: endsWith, includes, indexOf, match, replace, search, trim, valueOf, etc. The .length method works 
+   on strings and arrays. 
+   
    I'll demonstrate a couple of string methods just to give you an idea. For example, sometimes you may be working with 
    data where whether or not a letter is upper case or lower case doesn't matter, but to the function, a capitalized 
    letter is a completely different thing than the lower case version. So to eliminate any confusion, you can employ a method 
@@ -28,7 +30,7 @@
    console.log(string1.toLocaleLowerCase()); // 'ted pope'
    console.log(string1.toUpperCase()); // 'TED POPE' 
   
-   /* The method 'includes' will search a whole string from beginning to end and see if whatever it is you're looking for is in there anywhere. So say 
+   /* The method "includes" will search a whole string from beginning to end and see if whatever it is you're looking for is in there anywhere. So say 
    you had an article that was all about the best restaurants in New Orleans, and you wanted to find out if your favorite was mentioned, but you
    don't feel like looking over the whole article to see if it's in there or not. You could just copy and paste the entire article into the Replit 
    site we use in between two quotation marks, and make that string a variable (which we'll pretend is called article). Then you could see if it 

@@ -46,9 +46,11 @@ the possiblity of accidental reassignment or miscall.
 Using const provides the same protections, but the biggest difference is that const must be assigned
 a value immediatly. With var and let, you can do something like this just to create a variable to be
 assigned a value later:*/
+
 var ted;
 let pope;
-/* but not so with const, again with the idea of reducing misplaced variables.
+
+/* but not so with const, again with the idea of reducing misplaced variables. Also worth noting, a const value can't be reassigned.
 
 5. Hoisting
 Hoisting variables has to do with where in their scope variables are declared and assigned. 

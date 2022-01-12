@@ -8,7 +8,7 @@
  * the specific types.
  * 
  * 1. Numbers - With this type, it's not all that unlike a calculator. It recognizes numerical characters and their values, and can execute common 
- * arithmetic in a fairly straightforward way, even accounting for decimals or negative numbers. It even has a arithmetic tool that isn't on most 
+ * arithmetic in a fairly straightforward way, even accounting for decimals or negative numbers. It also has a arithmetic tool that isn't on most 
  * calculators but comes in handy sometimes, and to use it you use % like you would + or -. If you give it two numbers with % in between, it'll
  * divide one by the other and the number it gives back is the remainder. I'm getting off topic, though. We're focusing on data types.
  * 
@@ -17,9 +17,9 @@
  * difference just as long as you don't do something crazy like "Hello, there' with one of each kind). As you might imagine, it gets a little tricky
  * if you enter a string where part of it already has quotes.
  * 
- * 3. Booleans - These may have already been mentioned or at least alluded to. This is a type of data that's black or white. Booleans are absolute. 
+ * 3. Booleans - These may have already been mentioned (or at least alluded to). This is a type of data that's black or white. Booleans are absolute. 
  * A value is either one or the other, nothing in between. More specifically, the one case is called true and the other is called false. So booleans
- * are useful when you just want a yes or no answer. Is it this or isn't it? Perfect question for booleans.
+ * are useful when you just want a yes or no answer. Is it this, or isn't it? Perfect question for booleans.
  * 
  * 4. Arrays - Here's where trying to picture what we're talking about becomes a little more abstract. An array is a larger container for multiple 
  * values that are organized in a linear or sequential fashion. The best comparison I can think of is if you've ever seen a complete set of baseball
@@ -35,9 +35,9 @@
  * the info where there'll be a general category, like D.O.B, a colon, and then an individual's information specific to that category (so it'd look
  * like D.O.B: 4/10/78). That general category is called a key in JavaScript, and the specific info is called the value.
  * 
- * 6. Functions - So in general terms, functions are an entire process. They're a sort of procedure with different components that provide some service
- * in a sense. Again, it's a more abstract and complicated type of data than numbers or booleans. Functions take an input and apply certain conditions and procedures
- * to it. It's my belief that functions might be the same concept that most people hold for algorithms.
+ * 6. Functions - In general terms, functions are an entire process. They're a sort of procedure with different components that provide some service
+ * in a sense. Again, it's a more abstract and complicated type of data than numbers or booleans. Functions take an input and apply certain conditions 
+ * and procedures to it. It's my belief that functions might be the same concept that most people hold for algorithms.
  * 
  * That reminds me - data types are almost always taught as falling into two categories, simple or complex. If you had to guess, you'd probably do
  * pretty well determining which types of data are the more complicated types, and I have yet to realize why this designation even really matters, but 
@@ -74,10 +74,9 @@
  * number is a number (but it's not). I know I'm still brand new, but I have yet to come across an instance where I couldn't accomplish something 
  * with out the use of NaN, so I don't see the point of diving too deep on this one.
  * 
- * And the list of data types goes on . . . There's another type called infinity, and you better make darn sure you capitalize it in your code as a way
- * of recognizing its staggering scale. This one actually comes in handy when trying to see things through to their exterme ends. It's a way to test or
- * evaluate something when considering the most extreme possibilities. If you wanted to go to the extreme other side of 0, you can probably guess what
- * symbol needs to go before the almighty Infinity expression.
+ * And the list of data types goes on . . . There's another type called infinity, for instance. This one actually comes in handy when trying to see things 
+ * through to their exterme ends. It's a way to test or evaluate something when considering the most extreme possibilities. If you wanted to go to the 
+ * extreme other side of 0, you can probably guess what symbol needs to go before the almighty Infinity expression.
  * 
  * To recap, we've all probably heard someone mention datatypes without knowing for sure what it meant. It turns out what someone's referring
  * to when they mention datatypes is actually a certain TYPE of something, and that something is DATA. 

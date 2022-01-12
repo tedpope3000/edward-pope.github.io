@@ -5,7 +5,7 @@ LOOPS
 be built to seek out one thing in particular, or to go through the collection, retrieve what you want, then go back in again and do it all over 
 until you want it to stop.
 
-1. While Loops - If we were to translate what a while loop does into more plainspoken language, it might read like this: "For as long is this
+1. While Loops - If we were to translate what a while loop does into more plain-spoken language, it might read like this: "For as long is this
 is the case, I want you to do this. You can stop once it gets to this point." The following example is essentially saying, "So long as the number 
 is no bigger than ten, start at zero and log every number one at a time."
 */
@@ -34,10 +34,9 @@ for(var i = array.length - 1; i > -1; i--) {etc} //Worth noting is that a variab
 // by semicolons instead of commas. At first, I was writing it like this (i = array, and so forth).
 
 /* 
-3. For-In Loops - Ok, so after just re-reading about for-in loops are recommended for objects only (and just to be clear, this is how to loop over an object), 
-and the statement reads like this: To go through all the details (this is the 'for' part) of (the 'in') this object (this thing changes depending on the object) { 
-(and here's where you can say what to once you're in there)}. So say the object is called 'id' and it has all the key-value pairs a state ID card does. 
-If you were to run a for-in loop on id, it would look like this
+3. For-In Loops - This is how to loop over an object, and the statement reads like this: To go through all the details (this is the 'for' part) 
+of (the 'in') this object (this thing changes depending on the object) { (and here's where you can say what to once you're in there)}. So say 
+the object is called 'id' and it has all the key-value pairs a state ID card does. If you were to run a for-in loop on id, it would look like this:
 */
 
 var id = {
