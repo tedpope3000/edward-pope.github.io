@@ -106,8 +106,24 @@ var topThreeTags = function(array) {
     array.forEach(person => {
         newArr.push(person.tags);
     });
+    let allTags = newArr.flat()
 
-    return newArr;
+    let tagsObj = allTags.reduce(function(object, value) {
+      if (object[value]) {
+        object[value] += 1;
+      } else {
+        object[value] = 1;
+      }
+      return object
+
+    }, {});
+    var topThree = [];
+    for (var val in tagsObj) {
+      if (tagsObj[val] === 3) {
+        topThree.push(val)
+      }
+    };
+    return topThree
 };
 
 var genderCount = function(array) {
@@ -117,6 +133,7 @@ var genderCount = function(array) {
         } else {
             object[customer.gender] = 1;
         }
+        return object;
     }, {})
     return counts;
 };

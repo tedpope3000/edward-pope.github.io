@@ -1,5 +1,5 @@
 /**
- * DATATYPES
+ * DATATYPES (examples of 1-5 below [sigh])
  * 
  * 0. My aunt and uncle used to have a stereo they've had since the '70s. It has a built in 8-track, cassette player, record player, and later 
  * in its life they even added a CD player. It can play all types of formats, but it can't play every one. It's sort of the same situation with 
@@ -113,3 +113,51 @@ function firstLetterCount(array, letter) {
  * To recap, we've all probably heard someone mention datatypes without knowing for sure what it meant. It turns out what someone's referring
  * to when they mention datatypes is actually a certain TYPE of something, and that something is DATA. 
  */
+
+// [sigh] Let me do some Googling and copy and pasting.
+
+numbers strings booleans arrays objects
+
+// #1.
+const number1 = 3;
+const number2 = 3.433;
+const number3 = 3e5;
+// #2. 
+let answer1 = "It's alright";
+let answer2 = "He is called 'Johnny'";
+let answer3 = 'He is called "Johnny"';
+// #3.
+var x = Boolean(expression);     // use this...
+var x = !!(expression);          // ...or this
+var x = new Boolean(expression);
+if ([]) { console.log("[] is truthy")}         // logs "[] is truthy"
+if ([] == false) { console.log("[] == false")} // logs "[] == false"
+// #4. 
+var arr = [1, 2, 3, 4];
+console.log(arr.length); // 4
+arr[20] = 2; 
+console.log(arr.length);
+// #5.
+let person = {
+    firstName: 'John',
+    lastName: 'Doe'
+};
+let address = {
+    'building no': 3960,
+    street: 'North 1st street',
+    state: 'CA',
+    country: 'USA'
+};
+
+/**
+ * This assignment is diminishing returns, that's for sure.
+ */
+
+
+
+
+https://www.programiz.com/javascript/data-typesc
+https://www.w3schools.com/js/js_strings.asp
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+https://www.codingame.com/playgrounds/6181/javascript-arrays---tips-tricks-and-examples
+https://www.javascripttutorial.net/javascript-objects/
