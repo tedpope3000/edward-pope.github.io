@@ -28,9 +28,19 @@ In most cases, you just want to go through the whole thing top to bottom, and it
 start at the beginning, it looks like this:
 */
 
-for(var i = 0; i < array.length; i++) {do this while going through it} // From back to front it's like this:
+let string3 = 'RESPECT';
+let spelled = string3.split('');
+for(var i = 0; i < spelled.length; i++) {
+  console.log(spelled[i]);
+} // returns R E S P E C T, each letter having its own line
 
-for(var i = array.length - 1; i > -1; i--) {etc} //Worth noting is that a variable needs to be declared and each step of the process is separated
+// From back to front it's like this:
+
+for(var i = spelled.length - 1; i > -1; i--) {
+  console.log(spelled[i]);
+} // T C E P S E R 
+
+// Worth noting is that a variable needs to be declared and each step of the process is separated
 // by semicolons instead of commas. At first, I was writing it like this (i = array, and so forth).
 
 /* 

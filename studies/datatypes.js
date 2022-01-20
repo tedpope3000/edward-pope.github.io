@@ -10,22 +10,26 @@
  * 1. Numbers - With this type, it's not all that unlike a calculator. It recognizes numerical characters and their values, and can execute common 
  * arithmetic in a fairly straightforward way, even accounting for decimals or negative numbers. It also has a arithmetic tool that isn't on most 
  * calculators but comes in handy sometimes, and to use it you use % like you would + or -. If you give it two numbers with % in between, it'll
- * divide one by the other and the number it gives back is the remainder. I'm getting off topic, though. We're focusing on data types.
+ * divide one by the other and the number it gives back is the remainder. I'm getting off topic, though. We're focusing on data types. 
+ * Examples: 3 , 3.234 , 3e-2, etc.
  * 
  * 2. Strings - Here's where text can be manipulated with JavaScript, but using this type of data is less cut and dry than using numbers is.
  * For one, in order for JavaScript to realize you're working with strings, data has to be in either single or double quotes (turns out it makes zero 
  * difference just as long as you don't do something crazy like "Hello, there' with one of each kind). As you might imagine, it gets a little tricky
  * if you enter a string where part of it already has quotes.
+ * Examples: 'hello', 'hello world!', etc
  * 
  * 3. Booleans - These may have already been mentioned (or at least alluded to). This is a type of data that's black or white. Booleans are absolute. 
  * A value is either one or the other, nothing in between. More specifically, the one case is called true and the other is called false. So booleans
  * are useful when you just want a yes or no answer. Is it this, or isn't it? Perfect question for booleans.
+ * Examples: true or false
  * 
  * 4. Arrays - Here's where trying to picture what we're talking about becomes a little more abstract. An array is a larger container for multiple 
  * values that are organized in a linear or sequential fashion. The best comparison I can think of is if you've ever seen a complete set of baseball
  * cards. The whole box would be the array, but inside are individual cards with a different player on each one. When you take a card out of 
  * the set and look on the back, there's a number in the corner that shows its order in the deck. Arrays are like that in the sense that each individual
  * value is assigned a number for the sake of keeping an order and a relative position to the whole thing. These assigned numbers are called indexes.
+ * Examples: const cars = ['Honda', 'Volvo', 'Audi', 'Jeep']; const person = ['Aaron', 'Alex', 34];
  * 
  * 5. Objects - Hopefully you don't mind the baseball card analogy, because it really seems to work for arrays and objects. An object is another 
  * collection or group or container of smaller values. So with baseball cards, each one will have the guy's name plus other info like home run numbers,
@@ -34,11 +38,33 @@
  * each player. This is basically how objects work. A driver's license might work as a good comparison, too, in that objects use the same format for
  * the info where there'll be a general category, like D.O.B, a colon, and then an individual's information specific to that category (so it'd look
  * like D.O.B: 4/10/78). That general category is called a key in JavaScript, and the specific info is called the value.
+ * Example: const person = {firstName: 'Alex', lastName: 'Aaron', age: 34};
  * 
  * 6. Functions - In general terms, functions are an entire process. They're a sort of procedure with different components that provide some service
  * in a sense. Again, it's a more abstract and complicated type of data than numbers or booleans. Functions take an input and apply certain conditions 
  * and procedures to it. It's my belief that functions might be the same concept that most people hold for algorithms.
- * 
+ * Examples:
+ * **/
+
+ var averageBalance = function(array) {
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        let realNumber = Number(array[i].balance.slice(1).replace(',', ''));
+        sum += realNumber
+    }
+    let averageBal = sum / array.length;
+    return averageBal;
+};
+function firstLetterCount(array, letter) {
+    var letterCount = _.filter(array, function(object, i) {
+        if (object.name[0] === letter.toUpperCase()) {
+            return true;
+        }return false;
+    });
+    return letterCount.length;
+}
+
+/**  
  * That reminds me - data types are almost always taught as falling into two categories, simple or complex. If you had to guess, you'd probably do
  * pretty well determining which types of data are the more complicated types, and I have yet to realize why this designation even really matters, but 
  * FYI, some types are simple and some are complex. They're like a boolean value in that way, come to think of it. While I'm at it, I'm supposed to go 
@@ -63,16 +89,22 @@
  * expected in a certain place but it's not there. Like if someone were wearing a name tag with no name, you could say that person's name is 
  * undefined. Sometimes I'm supposed to make a function that's supposed to spit out some piece of data, but if I don't do it right, I'll get undefined
  * if I did enough right so it knows it's supposed to say something, but not enough right that it knows what to say.
+ * Example: let example; console.log(example); This prints undefined since no value was ever given to the variable.
  * 
  * Null, on the other hand, actually is a value in itself, but it's purpose is usually just to serve as a starting point in place of other 
  * values that are yet to come. It's easy to think of it conceptually as setting something to zero to start out with and going from there. Null provides a baseline
  * value. The reason things are set to null in JavaScript instead of just calling it 0, is that 0 is actually still a number with a value relative to
  * other numbers. Null is more of a baseline placeholder. Zero is more of a number, and undefined means something is missing.
+ * Example: let example = null; console.log(example); This prints null but not in quotes or anything since it's its own
+ * datatype.
  * 
  * Nine. NaN - I can't tell you what type of data this is, but I sure can tell what type it's not. N-A-N stands for Not a Number, and I feel like that's
  * pretty self-explanatory. Confusingly enough, if you were to ask JavaScript what data type NaN is using its built typeof feature, it tells you not a 
  * number is a number (but it's not). I know I'm still brand new, but I have yet to come across an instance where I couldn't accomplish something 
  * with out the use of NaN, so I don't see the point of diving too deep on this one.
+ * Examples: console.log(parseInt("blabla")); console.log(Number(undefined)); console.log(Math.sqrt(-1));
+ * console.log(0 * Infinity); console.log(undefined + undefined); console.log('me' / 3);
+ * These all print NaN.
  * 
  * And the list of data types goes on . . . There's another type called infinity, for instance. This one actually comes in handy when trying to see things 
  * through to their exterme ends. It's a way to test or evaluate something when considering the most extreme possibilities. If you wanted to go to the 

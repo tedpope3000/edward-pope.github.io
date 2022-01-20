@@ -45,3 +45,17 @@
 
    var marxBrothers = 'Groucho, Harpo, Chico, Zeppo'; 
    return marxBrothers.split(','); // returns [Groucho. Harpo, Chico, Zeppo]
+
+   /* Here's a couple of more examples: the first concatonates two strings into one. The second sort of does 
+   the opposite, except it returns the string as values in an array. It splits the string up based on what is put 
+   in the quotes inside the parentheses. If you put the quotes with nothing in them, it splits up every letter.
+   */
+   
+   let string1 = 'Did I ever tell you about the time my identity was stolen?';
+   let string2 = 'My credit score went up!';
+   console.log(string1.concat('? ', string2)); // prints Did I ever tell you about the time my identity was stolen?? My credit score went up!
+   
+   let string3 = 'RESPECT';
+   console.log(string3.split('')); // prints ['R', 'E', 'S', 'P', 'E', 'C', 'T']
+
+

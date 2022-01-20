@@ -75,15 +75,51 @@ var averageBalance = function(array) {
     return averageBal;
 };
 
-var firstLetterCount;
+var firstLetterCount = function(array, letter) {
+    var letterCount = _.filter(array, function(object, i) {
+        if (object.name[0] === letter.toUpperCase()) {
+            return true;
+        }return false;
+    });
+    return letterCount.length;
+}
 
-var friendFirstLetterCount;
+var friendFirstLetterCount = function(array, customer, letter) {
+    let filteredCustomerObj = array.filter(person => person.name === customer);
+    let friendsList = filteredCustomerObj[0].friends.filter(friend => friend.name.charAt(0).toLowerCase() === letter.toLowerCase());
+    let count = friendsList.length;
+    return count;
+};
 
-var friendsCount;
+var friendsCount = function(array, name) {
+    let arr = [];
+    array.forEach(person => {
+        person.friends.forEach(friend => {
+            friend.name === name ? arr.push(person.name): null;
+        });
+    });
+    return arr;
+};
 
-var topThreeTags;
+var topThreeTags = function(array) {
+    let newArr = [];
+    array.forEach(person => {
+        newArr.push(person.tags);
+    });
 
-var genderCount;
+    return newArr;
+};
+
+var genderCount = function(array) {
+    let counts = array.reduce(function(object, customer) {
+        if (object[customer.gender]) {
+            object[customer.gender] += 1;
+        } else {
+            object[customer.gender] = 1;
+        }
+    }, {})
+    return counts;
+};
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////

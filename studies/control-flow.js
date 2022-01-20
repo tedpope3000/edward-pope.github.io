@@ -6,7 +6,12 @@ Something either happens or it doesn't. It's sort of a path that leads from the 
 Let's look at some specifics, why not.
 
 1. If statement - If (something) is true, you'll get {this result}. One way or the other; yes or no.
+*/
+if ('The glove doesn\'t fit' === true) {
+  return 'You must acquit.'
+}
 
+/*
 2. If-Else - There's a way you can chart a new path for scenarios when the first condition is not true. We call these Else-If statements. So when 
 the first thing isn't true, an alternate path opens up. Another yes or no question is asked.
 

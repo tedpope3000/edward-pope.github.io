@@ -397,23 +397,20 @@ var minimizeZeroes = function(array, newArr = []) {
 // their original sign.  The first number in the index always needs to be positive.
 // alternateSign([2,7,8,3,1,4]) // [2,-7,8,-3,1,-4]
 // alternateSign([-2,-7,8,3,-1,4]) // [2,-7,8,-3,1,-4]
-var alternateSign = function(array, results = [], sign = 1) {
-  if(array.length === 0) {
-    return results;
+var alternateSign = function(array, counter = 0, sign = 1) {
+  if(array.length === counter) {
+    return array;
   }
-  let value = array.shift();
   if(sign === 1) {
-    if(value < 0) {
-      value *= -1;
+    if(array[counter] < 0) {
+      array[counter] *= -1;
     }
-    results.push(value);
-    return alternateSign(array, results, 0);
+    return alternateSign(array, counter + 1, 0);
   } else {
-    if(value > 0) {
-      value *= -1;
+    if(array[counter] > 0) {
+      array[counter] *= -1;
     }
-    results.push(value);
-    return alternateSign(array, results, 1);
+    return alternateSign(array, counter + 1, 1);
   }
 };
 
