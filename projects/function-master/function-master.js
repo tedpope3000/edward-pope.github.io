@@ -126,7 +126,8 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
-    return object[key] = value;
+    object[key] = value;
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -148,7 +149,7 @@ function removeProperties(object, array) {
 function dedup(array) {
     let newArray = [];
     for (let i = 0; i < array.length; i++) {
-        if (array[i] !== array[i + 1] && array[i] !== array[i + 2]) {
+        if (array[i] !== array[i + 1] && !newArray.includes(array[i])) {
             newArray.push(array[i])
         }
     }
